@@ -1,0 +1,497 @@
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Nusantara - Beranda</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0f172a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* STATISTIK */
+        .stats {
+            padding: 50px 8%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .stat-card h2 {
+            color: #1e3a8a;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #666;
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* PROFIL */
+        .profile {
+            background: white;
+        }
+
+        .profile-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .profile-content p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* BERITA */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .news-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .news-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* EKSTRAKURIKULER */
+        .extra {
+            background: #eef6ff;
+        }
+
+        .extra-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .extra-card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .extra-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .extra-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 180px;
+            background: linear-gradient(135deg, #1e3a8a, #38bdf8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 8%;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #cbd5e1;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .stats,
+            .news-container,
+            .extra-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .stats,
+            .news-container,
+            .extra-container,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">SMK Nusantara</div>
+
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil Sekolah</a></li>
+            <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di <span>SMK Nusantara</span></h1>
+
+            <p>
+                Sekolah Menengah Kejuruan yang berkomitmen
+                mencetak generasi muda yang kompeten,
+                kreatif, disiplin, dan siap menghadapi dunia kerja.
+            </p>
+
+            <a href="profil.html" class="btn">
+                Lihat Profil Sekolah
+            </a>
+        </div>
+    </section>
+
+    <!-- STATISTIK -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <h2>45</h2>
+            <p>Guru & Staff</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>850</h2>
+            <p>Siswa</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>12</h2>
+            <p>Program Keahlian</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>25+</h2>
+            <p>Tahun Berdiri</p>
+        </div>
+
+    </section>
+
+    <!-- PROFIL SINGKAT -->
+    <section class="profile">
+
+        <div class="section-title">
+            <h2>Tentang SMK Nusantara</h2>
+            <p>Mengenal lebih dekat sekolah kami</p>
+        </div>
+
+        <div class="profile-content">
+
+            <p>
+                SMK Nusantara merupakan sekolah menengah kejuruan
+                yang berfokus pada pengembangan keterampilan,
+                pengetahuan, dan karakter siswa.
+                Kami menyediakan lingkungan belajar yang nyaman
+                serta mendukung siswa untuk mengembangkan potensi
+                dan prestasi mereka.
+            </p>
+
+            <a href="profil.html" class="btn">
+                Selengkapnya
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- BERITA -->
+    <section>
+
+        <div class="section-title">
+            <h2>Berita & Informasi</h2>
+            <p>Informasi terbaru dari SMK Nusantara</p>
+        </div>
+
+        <div class="news-container">
+
+            <div class="news-card">
+                <h3>Penerimaan Siswa Baru</h3>
+                <p>
+                    SMK Nusantara membuka pendaftaran peserta
+                    didik baru untuk tahun ajaran berikutnya.
+                </p>
+            </div>
+
+            <div class="news-card">
+                <h3>Prestasi Siswa</h3>
+                <p>
+                    Siswa SMK Nusantara berhasil meraih prestasi
+                    dalam berbagai kompetisi akademik dan non-akademik.
+                </p>
+            </div>
+
+            <div class="news-card">
+                <h3>Kegiatan Sekolah</h3>
+                <p>
+                    Berbagai kegiatan sekolah dilaksanakan untuk
+                    meningkatkan kreativitas dan kemampuan siswa.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EKSTRAKURIKULER -->
+    <section class="extra">
+
+        <div class="section-title">
+            <h2>Ekstrakurikuler</h2>
+            <p>Kembangkan bakat dan minat bersama SMK Nusantara</p>
+        </div>
+
+        <div class="extra-container">
+
+            <div class="extra-card">
+                <h3>⚽ Futsal</h3>
+                <p>
+                    Kegiatan olahraga untuk meningkatkan
+                    kemampuan, kerja sama, dan sportivitas siswa.
+                </p>
+            </div>
+
+            <div class="extra-card">
+                <h3>🥋 Pencak Silat</h3>
+                <p>
+                    Melatih bela diri, kedisiplinan,
+                    keberanian, dan karakter siswa.
+                </p>
+            </div>
+
+            <div class="extra-card">
+                <h3>💻 IT Club</h3>
+                <p>
+                    Wadah bagi siswa yang tertarik pada teknologi,
+                    komputer, pemrograman, dan desain.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALERI -->
+    <section>
+
+        <div class="section-title">
+            <h2>Galeri Sekolah</h2>
+            <p>Dokumentasi kegiatan SMK Nusantara</p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                Kegiatan Sekolah
+            </div>
+
+            <div class="gallery-item">
+                Wisuda Siswa
+            </div>
+
+            <div class="gallery-item">
+                Lingkungan Sekolah
+            </div>
+
+            <div class="gallery-item">
+                Prestasi Siswa
+            </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+            <a href="galeri.html" class="btn">
+                Lihat Semua Galeri
+            </a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>SMK Nusantara</h3>
+
+        <p>
+            Mencetak Generasi Kompeten, Kreatif, dan Berkarakter.
+        </p>
+
+        <p>
+            © 2026 SMK Nusantara. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

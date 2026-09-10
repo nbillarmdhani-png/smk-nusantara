@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri - SMK Nusantara</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0f3d75;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* CONTENT */
+        main {
+            padding: 70px 8%;
+            min-height: 600px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h1 {
+            color: #0f3d75;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #6b7280;
+        }
+
+        /* GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: linear-gradient(135deg, #93c5fd, #2563eb);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04);
+        }
+
+        .gallery-item p {
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f3d75;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            SMK <span>NUSANTARA</span>
+        </div>
+
+        <div>
+            <a href="index.html">Beranda</a>
+            <a href="profil.html">Profil</a>
+            <a href="ekstrakurikuler.html">Ekstrakurikuler</a>
+            <a href="galeri.html">Galeri</a>
+        </div>
+    </nav>
+
+    <!-- GALERI -->
+    <main>
+
+        <div class="title">
+            <h1>Galeri Kegiatan</h1>
+            <p>Dokumentasi kegiatan SMK Nusantara</p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                📷
+                <p>Kegiatan Sekolah</p>
+            </div>
+
+            <div class="gallery-item">
+                🎓
+                <p>Wisuda Siswa</p>
+            </div>
+
+            <div class="gallery-item">
+                🏫
+                <p>Lingkungan Sekolah</p>
+            </div>
+
+            <div class="gallery-item">
+                🏆
+                <p>Prestasi Siswa</p>
+            </div>
+
+            <div class="gallery-item">
+                ⚽
+                <p>Kegiatan Futsal</p>
+            </div>
+
+            <div class="gallery-item">
+                💻
+                <p>IT Club</p>
+            </div>
+
+            <div class="gallery-item">
+                🥋
+                <p>Pencak Silat</p>
+            </div>
+
+            <div class="gallery-item">
+                👨‍🎓
+                <p>Aktivitas Siswa</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>SMK NUSANTARA</strong></p>
+        <p>Jl. Pendidikan No. 10, Bandar Lampung</p>
+        <p>&copy; 2026 SMK Nusantara. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
