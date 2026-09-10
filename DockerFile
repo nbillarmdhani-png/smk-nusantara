@@ -1,0 +1,37 @@
+FROM php:8.2-apache
+
+# Install extension PHP yang dibutuhkan Laravel
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Aktifkan Apache rewrite
+RUN a2enmod rewrite
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Folder kerja
+WORKDIR /var/www/html
+
+# Copy file Composer terlebih dahulu
+COPY composer.json composer.lock ./
+
+# Install dependency Laravel
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+# Copy seluruh project
+COPY . .
+
+# Laravel menggunakan folder public sebagai document root
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' \
+    /etc/apache2/sites-available/000-default.conf \
+    /etc/apache2/apache2.conf \
+    /etc/apache2/conf-available/docker-php.conf
+
+# Permission folder Laravel
+RUN chown -R www-data:www-data /var/www/html/storage \
+    /var/www/html/bootstrap/cache
+
+# Optimasi Laravel
+RUN php artisan config:clear
+
+EXPOSE 80
