@@ -72,34 +72,43 @@
 
         /* GALERI */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-        .gallery-item {
-            height: 200px;
-            background: linear-gradient(135deg, #93c5fd, #2563eb);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-            transition: .3s;
-        }
+.gallery-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
 
-        .gallery-item:hover {
-            transform: scale(1.04);
-        }
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
 
-        .gallery-item p {
-            font-size: 16px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+.gallery-item p {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
 
         /* FOOTER */
         footer {
@@ -161,49 +170,34 @@
             <p>Dokumentasi kegiatan SMK Nusantara</p>
         </div>
 
-        <div class="gallery">
+       <div class="gallery">
 
-            <div class="gallery-item">
-                📷
-                <p>Kegiatan Sekolah</p>
-            </div>
+    <div class="gallery-item">
+        <img src="images/kegiatan.jpg" alt="Kegiatan Sekolah">
+        <p>Kegiatan Sekolah</p>
+    </div>
 
-            <div class="gallery-item">
-                🎓
-                <p>Wisuda Siswa</p>
-            </div>
+    <div class="gallery-item">
+        <img src="images/futsal.jpg" alt="Kegiatan Futsal">
+        <p>Kegiatan Futsal</p>
+    </div>
 
-            <div class="gallery-item">
-                🏫
-                <p>Lingkungan Sekolah</p>
-            </div>
+    <div class="gallery-item">
+        <img src="images/it-club.jpg" alt="IT Club">
+        <p>IT Club</p>
+    </div>
 
-            <div class="gallery-item">
-                🏆
-                <p>Prestasi Siswa</p>
-            </div>
+    <div class="gallery-item">
+        <img src="images/wisuda.jpg" alt="Wisuda Siswa">
+        <p>Wisuda Siswa</p>
+    </div>
 
-            <div class="gallery-item">
-                ⚽
-                <p>Kegiatan Futsal</p>
-            </div>
+    <div class="gallery-item">
+        <img src="images/pencak-silat.jpg" alt="Pencak Silat">
+        <p>Pencak Silat</p>
+    </div>
 
-            <div class="gallery-item">
-                💻
-                <p>IT Club</p>
-            </div>
-
-            <div class="gallery-item">
-                🥋
-                <p>Pencak Silat</p>
-            </div>
-
-            <div class="gallery-item">
-                👨‍🎓
-                <p>Aktivitas Siswa</p>
-            </div>
-
-        </div>
+</div>
 
     </main>
 
