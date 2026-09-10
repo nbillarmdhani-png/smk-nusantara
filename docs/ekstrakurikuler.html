@@ -10,108 +10,145 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
+            background: #f5f7fa;
+            color: #333;
         }
 
         nav {
-            background: #0f3d75;
+            background: #0f172a;
             padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
+        nav .logo {
             color: white;
-            font-size: 23px;
+            font-size: 24px;
             font-weight: bold;
         }
 
-        .logo span {
-            color: #60a5fa;
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
         }
 
-        nav a {
+        nav ul li a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            font-size: 15px;
         }
 
-        nav a:hover {
-            color: #60a5fa;
+        nav ul li a:hover {
+            color: #38bdf8;
         }
 
-        main {
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
             padding: 70px 8%;
         }
 
-        .title {
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 60px 8%;
+        }
+
+        .section-title {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .title h1 {
-            color: #0f3d75;
-            font-size: 35px;
+        .section-title h2 {
+            font-size: 32px;
+            color: #0f172a;
             margin-bottom: 10px;
         }
 
-        .title p {
-            color: #6b7280;
+        .section-title p {
+            color: #666;
         }
 
-        .cards {
+        .extra-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .card {
+        .extra-card {
             background: white;
+            padding: 35px 25px;
+            text-align: center;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-            transition: .3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
+        .extra-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.extra-card h3 {
+    color: #1e3a8a;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.extra-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+        .extra-card:hover {
+            transform: translateY(-5px);
         }
 
         .icon {
-            height: 170px;
-            background: linear-gradient(135deg, #60a5fa, #2563eb);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
+            font-size: 45px;
+            margin-bottom: 15px;
         }
 
-        .content {
-            padding: 25px;
+        .extra-card h3 {
+            color: #1e3a8a;
+            font-size: 21px;
+            margin-bottom: 12px;
         }
 
-        .content h2 {
-            color: #0f3d75;
-            margin-bottom: 10px;
-        }
-
-        .content p {
-            color: #6b7280;
+        .extra-card p {
+            color: #666;
             line-height: 1.6;
         }
 
         footer {
-            margin-top: 30px;
-            background: #0f3d75;
+            background: #0f172a;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 8%;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+            margin-top: 8px;
         }
 
         @media (max-width: 768px) {
@@ -120,12 +157,23 @@
                 gap: 15px;
             }
 
-            nav a {
-                margin: 5px;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .cards {
+            .extra-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .extra-container {
                 grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
             }
         }
     </style>
@@ -133,69 +181,107 @@
 
 <body>
 
-<nav>
-    <div class="logo">
-        SMK <span>NUSANTARA</span>
-    </div>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">SMK Nusantara</div>
 
-    <div>
-        <a href="index.html">Beranda</a>
-        <a href="profil.html">Profil</a>
-        <a href="ekstrakurikuler.html">Ekstrakurikuler</a>
-        <a href="galeri.html">Galeri</a>
-    </div>
-</nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil Sekolah</a></li>
+            <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+        </ul>
+    </nav>
 
-<main>
-
-    <div class="title">
+    <!-- HERO -->
+    <section class="hero">
         <h1>Ekstrakurikuler</h1>
-        <p>Kegiatan untuk mengembangkan bakat dan minat siswa</p>
+        <p>
+            Wadah untuk mengembangkan bakat, minat,
+            kreativitas, dan kemampuan siswa.
+        </p>
+    </section>
+
+    <!-- EKSTRAKURIKULER -->
+    <section class="container">
+
+        <div class="section-title">
+            <h2>Pilihan Ekstrakurikuler</h2>
+            <p>
+                Pilih kegiatan sesuai minat dan bakatmu
+            </p>
+        </div>
+
+        <div class="extra-container">
+
+    <div class="extra-card">
+        <img src="images/futsal.jpg" alt="Futsal">
+        <h3>⚽ Futsal</h3>
+        <p>
+            Mengembangkan kemampuan olahraga,
+            kedisiplinan, dan kerja sama tim.
+        </p>
     </div>
 
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">⚽</div>
-            <div class="content">
-                <h2>Futsal</h2>
-                <p>
-                    Mengembangkan kemampuan olahraga,
-                    kedisiplinan, dan kerja sama tim.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="icon">🥋</div>
-            <div class="content">
-                <h2>Pencak Silat</h2>
-                <p>
-                    Melatih kedisiplinan, keberanian,
-                    dan kemampuan bela diri siswa.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="icon">💻</div>
-            <div class="content">
-                <h2>IT Club</h2>
-                <p>
-                    Meningkatkan kemampuan siswa dalam
-                    teknologi, komputer, dan pemrograman.
-                </p>
-            </div>
-        </div>
-
+    <div class="extra-card">
+        <img src="images/pencak-silat.jpg" alt="Pencak Silat">
+        <h3>🥋 Pencak Silat</h3>
+        <p>
+            Melatih kedisiplinan, keberanian,
+            dan kemampuan bela diri siswa.
+        </p>
     </div>
 
-</main>
+    <div class="extra-card">
+        <img src="images/it-club.jpg" alt="IT Club">
+        <h3>💻 IT Club</h3>
+        <p>
+            Meningkatkan kemampuan siswa dalam
+            teknologi, komputer, dan pemrograman.
+        </p>
+    </div>
 
-<footer>
-    <strong>SMK NUSANTARA</strong>
-    <p>&copy; 2026 SMK Nusantara. All Rights Reserved.</p>
-</footer>
+    <div class="extra-card">
+        <img src="images/seni-desain.jpg" alt="Seni dan Desain">
+        <h3>🎨 Seni & Desain</h3>
+        <p>
+            Mengembangkan kreativitas siswa melalui
+            seni, desain, dan berbagai karya kreatif.
+        </p>
+    </div>
+
+    <div class="extra-card">
+        <img src="images/musik.jpg" alt="Musik">
+        <h3>🎸 Musik</h3>
+        <p>
+            Menyalurkan bakat siswa dalam bidang musik
+            dan meningkatkan kreativitas.
+        </p>
+    </div>
+
+    <div class="extra-card">
+        <img src="images/badminton.jpg" alt="Badminton">
+        <h3>🏸 Badminton</h3>
+        <p>
+            Meningkatkan kebugaran, keterampilan olahraga,
+            serta sportivitas siswa.
+        </p>
+    </div>
+
+</div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>SMK Nusantara</h3>
+        <p>
+            Mencetak Generasi Kompeten, Kreatif, dan Berkarakter.
+        </p>
+        <p>
+            © 2026 SMK Nusantara. All Rights Reserved.
+        </p>
+    </footer>
 
 </body>
 </html>
